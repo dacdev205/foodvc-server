@@ -4,7 +4,7 @@ const usersAPI = require('../controllers/userControllers')
 const verifyToken = require('../middleware/verifyToken')
 const verifyAdmin = require('../middleware/verifyAdmin')
 // 
-router.get("/",verifyToken, verifyAdmin, usersAPI.getAllUsers);
+router.get("/",usersAPI.getAllUsers);
 router.post("/", usersAPI.createUser);
 router.get("/:id", usersAPI.getSigleUser)
 router.delete("/:id",verifyToken, verifyAdmin,usersAPI.deleteUser);
